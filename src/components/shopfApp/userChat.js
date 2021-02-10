@@ -122,9 +122,9 @@ class UserChat extends Component {
         const  { openFilter, anchorEl, showContactInfo, contactAnchorEl } = this.state;
         return(
             <Grid conatiner>
-                <Grid item xs={24} sm={12}>
-                    <Grid container direction="row" alignItems="center" xs={24} sm={12} style={{marginTop: '20px', marginBottom: '20px'}}>
-                        <Grid item xs={8} sm={3}>
+                {/* <Grid item>
+                    <Grid container direction="row" alignItems="center" xs={12} sm={12} md={12} lg={12} style={{marginTop: '20px', marginBottom: '20px'}}>
+                        <Grid item xs={4} sm={4} md={4} lg={4}>
                             <TextField
                                 id="outlined-secondary"
                                 variant="outlined"
@@ -140,13 +140,13 @@ class UserChat extends Component {
                             >
                             </TextField>
                         </Grid>
-                        <Grid item xs={2} sm={1} style={{ marginTop: '10px', marginLeft: '20px'}} onClick={(e) => this.handleClickFilter(e)}>
+                        <Grid item xs={1} sm={1} style={{ marginTop: '10px', marginLeft: '20px'}} onClick={(e) => this.handleClickFilter(e)}>
                             <ArrowDropDownCircleOutlined/>
                         </Grid>
-                        <Grid item xs={10} sm={4}>
+                        <Grid item xs={2} sm={2} md={2} lg={2}>
 
                         </Grid>
-                        <Grid item xs={8} sm={3} >
+                        <Grid item xs={4} sm={4} md={4} lg={4}>
                             <Button
                                 variant="outlined"
                                 style={
@@ -200,35 +200,34 @@ class UserChat extends Component {
                             </Popover>
                         }
                     </Grid>
-                </Grid>
-                <Grid item  style={{marginTop: '50px'}}>
-                    <Grid container direction="row" xs={24} sm={12}>
-                        <Grid item xs={8} sm={4}>
+                </Grid> */}
+                <Grid item style={{marginTop: '30px'}}>
+                    <Grid container direction="row" xs={12} sm={12} md={10} lg={12} spacing={2}>
+                        <Grid item xs={10} sm={8} md={5} lg={5} >
                             <Paper 
                                 variant="outlined" 
                                 elevation={3}
                                 style={{
                                     maxHeight: '550px',
-                                    width: '400px',
+                                    minWidth: '400px',
                                     overflow: 'auto'
                                 }}
                             >
                                 <div id="content">{this.getInqueries()}</div>
                             </Paper>
                         </Grid>
-                        <Grid item xs={4} sm={1}></Grid>
-                        <Grid item xs={12} sm={7} style={{paddingLeft: '30px'}}>
+                        <Grid item xs={10} sm={10} md={7} lg={7} style={{paddingLeft: '30px'}}>
                             <Paper 
                                 variant="outlined" 
                                 elevation={3}
                                 style={{
                                     height: '650px',
-                                    width: '680px',
+                                    minWidth: '550px',
                                 }}
                             >
                                 <div id="head" style={{height: '40px', background: "#afebed", color: "#161613"}}>
                                     <span style={{paddingLeft: '30px'}}>Inquiry about relocation from nairobi</span>
-                                    <span style={{marginLeft: '210px'}}>
+                                    <span style={{marginRight: '10px'}}>
                                         <Button
                                             variant="outlined"
                                             style={
@@ -238,7 +237,7 @@ class UserChat extends Component {
                                             Contact Info
                                         </Button>
                                     </span>
-                                    <span style={{marginLeft: '10px', paddingTop: '5px', alignItems: 'center'}} onClick={(e) => this.showContact(e)}><MoreVert /></span>
+                                    <span style={{marginRight: '10px', paddingTop: '5px', alignItems: 'center'}} onClick={(e) => this.showContact(e)}><MoreVert /></span>
                                     {showContactInfo &&
                                         <Popover
                                             id='contact_popover'
@@ -296,10 +295,13 @@ class UserChat extends Component {
                                 <div id="content"
                                     style={{
                                         maxHeight: '600px',
-                                        width: '680px',
+                                        // minWidth:'380px',
+                                        // width: '680px',
                                         overflow: 'auto'
                                     }}
-                                >{this.getInqueriesContent()}</div>
+                                >
+                                {this.getInqueriesContent()}
+                                </div>
                             </Paper>
                         </Grid>
                     </Grid>

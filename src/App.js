@@ -1,12 +1,13 @@
 import React from 'react';
 // import './App.css';
-import FleetApp from '../src/components/fleetApp';
+import ShopfApp from '../src/components/shopfApp';
 import Grid from '@material-ui/core/Grid';
+import Routes from './routes';
 
 function App() {
   return (
     <Grid className="App">
-      <FleetApp />
+      <Routes />
     </Grid>
   );
 }
